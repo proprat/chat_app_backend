@@ -17,7 +17,6 @@ import { ErrorHandler } from "../utils/utility.js";
 const newUser = TryCatch(async (req, res, next) => {
   console.log("Request body:", req.body);
   const { name, username, password, bio } = req.body;
-  console.log(req);
   const file = req.file;
 
   if (!file) return next(new ErrorHandler("Please Upload Avatar"));
