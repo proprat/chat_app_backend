@@ -30,19 +30,19 @@ dotenv.config({
   path: "./.env",
 });
 
-const mongoURI = process.env.MONGO_URI;
+const mongoURI = process.env.MONGO_URI ;
 const port = process.env.PORT || 3000;
-const envMode = process.env.NODE_ENV.trim() || "PRODUCTION";
-const adminSecretKey = process.env.ADMIN_SECRET_KEY || "adsasdsdfsdfsdfd";
+const envMode = process.env.NODE_ENV.trim() ;
+const adminSecretKey = process.env.ADMIN_SECRET_KEY ;
 const userSocketIDs = new Map();
 const onlineUsers = new Set();
 
 connectDB(mongoURI);
 
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME  ,
+  api_key: process.env.CLOUDINARY_API_KEY ,
+  api_secret: process.env.CLOUDINARY_API_SECRET ,
 });
 
 const app = express();

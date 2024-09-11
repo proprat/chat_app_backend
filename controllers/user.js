@@ -15,8 +15,9 @@ import { ErrorHandler } from "../utils/utility.js";
 
 // Create a new user and save it to the database and save token in cookie
 const newUser = TryCatch(async (req, res, next) => {
+  console.log("Request body:", req.body);
   const { name, username, password, bio } = req.body;
-
+  console.log(req);
   const file = req.file;
 
   if (!file) return next(new ErrorHandler("Please Upload Avatar"));
