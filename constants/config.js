@@ -1,6 +1,8 @@
 const corsOptions = {
-  origin:
+  origin: [
     'http://localhost:5173',
+    'https://chat-app-frontend-seven-sigma.vercel.app'
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 };
