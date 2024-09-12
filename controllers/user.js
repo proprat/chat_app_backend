@@ -41,6 +41,7 @@ const newUser = TryCatch(async (req, res, next) => {
 
 // Login user and save token in cookie
 const login = TryCatch(async (req, res, next) => {
+  console.log("Hii");
   const { username, password } = req.body;
 
   const user = await User.findOne({ username }).select("+password");
