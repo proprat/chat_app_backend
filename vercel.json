@@ -6,11 +6,10 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.js",
-      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
+      "source": "/(.*)",
+      "destination": "/index.js"
     }
   ],
   "headers": [
@@ -19,7 +18,7 @@
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://chat-app-frontend-seven-sigma.vercel.app"
+          "value": "https://chat-app-frontend-seven-sigma.vercel.app"  
         },
         {
           "key": "Access-Control-Allow-Methods",
