@@ -19,7 +19,7 @@
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://chat-app-frontend-seven-sigma.vercel.app" // Use your frontend domain here
+          "value": "https://chat-app-frontend-seven-sigma.vercel.app"
         },
         {
           "key": "Access-Control-Allow-Methods",
