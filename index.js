@@ -52,16 +52,13 @@ const allowedOrigins = [
   'https://chat-app-frontend-seven-sigma.vercel.app'
 ];
 const io = new Server(server, {
-  cors:{
-    origin: function (origin, callback) {
-      if (allowedOrigins.includes(origin) || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    credentials: true, // This will allow credentials such as cookies
-  },
+  cors: {
+    origin: ['http://localhost:5173', 
+  'https://chat-app-frontend-seven-sigma.vercel.app'],
+    methods: ['GET', 'POST'],
+    credentials: true
+  }
+
 });
 
 app.set("io", io);
