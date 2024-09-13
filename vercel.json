@@ -13,7 +13,7 @@
     },
     {
       "source": "/socket.io/(.*)",
-      "destination": "https://chat-app-backend-puce.vercel.app/socket.io/$1"
+      "destination": "/index.js"
     }
   ],
   "headers": [

@@ -57,7 +57,8 @@ const io = new Server(server, {
   'https://chat-app-frontend-seven-sigma.vercel.app'],
     methods: ['GET', 'POST'],
     credentials: true
-  }
+  },
+  transports: ['websocket', 'polling']
 
 });
 
