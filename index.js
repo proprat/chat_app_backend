@@ -47,8 +47,21 @@ cloudinary.config({
 
 const app = express();
 const server = createServer(app);
+const allowedOrigins = [
+  'http://localhost:5173', 
+  'https://chat-app-frontend-seven-sigma.vercel.app'
+];
 const io = new Server(server, {
-  cors:corsOptions,
+  cors:{
+    origin: function (origin, callback) {
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true, // This will allow credentials such as cookies
+  },
 });
 
 app.set("io", io);
@@ -56,10 +69,7 @@ app.set("io", io);
 // Using Middlewares Here
 app.use(express.json());
 app.use(cookieParser());
-const allowedOrigins = [
-  'http://localhost:5173', 
-  'https://chat-app-frontend-seven-sigma.vercel.app'
-];
+
 
 app.use(cors({
   origin: function (origin, callback) {
